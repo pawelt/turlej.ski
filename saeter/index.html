@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Business Name</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="header" id="header">
+            <div class="container">
+                <a href="#" onclick="setTimeout(() => history.replaceState(null, '', ''), 10)">
+                    <span class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="260 -960 600 960" fill="#fff">
+                            <path
+                                d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
+                            />
+                        </svg>
+                    </span>
+                    <h1 class="logo">
+                        <span class="logo-primary">Sæter</span>
+                        <span class="logo-secondary">Dyreklinikk</span>
+                    </h1>
+                </a>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#prices">Prices</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Professional Service</h2>
+                <p>Short description of your business and what you offer.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Tell visitors who you are, what you do, and why they should choose your service.</p>
+            </div>
+        </section>
+
+        <section id="prices" class="section alt">
+            <div class="container">
+                <h2>Price List</h2>
+
+                <div class="price-list">
+                    <div class="price-item">
+                        <span>Service 1</span>
+                        <span>$50</span>
+                    </div>
+
+                    <div class="price-item">
+                        <span>Service 2</span>
+                        <span>$80</span>
+                    </div>
+
+                    <div class="price-item">
+                        <span>Service 3</span>
+                        <span>$120</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact</h2>
+
+                <p>Email: hello@saeterdyreklinikk.com</p>
+                <p>Phone: 123 456 789</p>
+                <p>Address: Somewhere, City</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 Sæter Dyreklinikk</p>
+            </div>
+        </footer>
+
+        <a href="#" class="top-btn" onclick="setTimeout(() => history.replaceState(null, '', ''), 10)">↑</a>
+
+        <script>
+            const header = document.getElementById("header");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+        </script>
+    </body>
+</html>
+`
