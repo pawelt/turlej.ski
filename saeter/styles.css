@@ -1,5 +1,5 @@
 :root {
-    --c-base: #282828;
+    --c-base: #465848;
     --c-dark-1: #566b5b;
     --c-dark-2: #465848;
     --c-light-1: #faf9f7;
@@ -16,7 +16,7 @@
     --fs-xxl: clamp(2rem, 1.64rem + 1.82vw, 3rem);
     --fs-xxxl: clamp(3rem, 2.27rem + 3.64vw, 5rem);
 
-    --width-page: calc(100vw - 2rem);
+    --width-page: calc(100vw - 2.5rem);
     --width-container: min(63rem, var(--width-page));
     --height-nav: 5rem;
     --height-scrolled-nav: 4rem;
@@ -27,6 +27,9 @@ html {
     scrollbar-gutter: stable;
     interpolate-size: allow-keywords;
     scroll-behavior: smooth;
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
 }
 
 *,
@@ -44,7 +47,6 @@ ul {
 }
 
 a {
-    white-space: nowrap;
     text-decoration: none;
 }
 
@@ -58,7 +60,7 @@ p {
     margin-bottom: 1rem;
 }
 
-svg.icon {
+svg.icon-light {
     width: 1rem;
     path {
         stroke: currentColor;
@@ -136,6 +138,17 @@ section[id] {
     opacity: 0.95;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
+    button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        &:hover {
+            path {
+                fill: var(--c-dark-2);
+            }
+        }
+    }
+
     .btn-dark {
         border: none;
         font-weight: 600;
@@ -149,9 +162,6 @@ section[id] {
         display: flex;
         flex-shrink: 0;
         gap: 1.5rem;
-        a {
-            display: flex;
-        }
     }
 
     .nav-menu.full {
@@ -247,7 +257,7 @@ section[id] {
         .nav-dialog-close-wrap {
             display: flex;
             justify-content: end;
-            padding-right: 1rem;
+            padding-right: 1.25rem;
             padding-top: 1.5rem;
             .scrolled & {
                 padding-top: 1rem;
@@ -273,11 +283,11 @@ section[id] {
 }
 
 .section-hero {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--c-light-1);
     background-color: var(--c-dark-2);
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("img/hero-1.jpg");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("img/hero-1.jpg"); */
     background-image: url("img/hero-1.jpg");
     background-position: 20% 20%;
     background-repeat: no-repeat;
@@ -300,7 +310,7 @@ section[id] {
     }
 
     .site-title {
-        font-size: var(--fs-xxxl);
+        font-size: var(--fs-xxl);
         font-family: var(--ff-serif);
         line-height: 1;
         max-width: max(var(--width-container) * 0.7, 375px);
@@ -344,7 +354,7 @@ section[id] {
         cursor: pointer;
         letter-spacing: 1px;
         margin-top: 0.5rem;
-        font-size: var(--fs-md);
+        font-size: var(--fs-lg);
         &:hover {
             color: var(--c-dark-2);
         }
@@ -395,17 +405,12 @@ section[id] {
             background-color: var(--c-light-2);
         }
 
-        div > :nth-child(1) {
-            font-weight: 600;
-        }
-
         div > :nth-child(2) {
             flex-grow: 1;
             font-size: var(--fs-sm);
         }
 
         & > :last-child {
-            font-weight: 600;
             white-space: nowrap;
             color: var(--c-dark-2);
             &::after {
@@ -459,7 +464,6 @@ section[id] {
 }
 
 .section-clinic {
-
     .clinic-grid {
         display: flex;
         flex-wrap: wrap;
@@ -508,7 +512,7 @@ section[id] {
         gap: var(--gap);
         line-height: 1.75;
 
-        :has(+ time) {
+        span:first-of-type {
             font-weight: 600;
             width: 9ch;
             display: inline-block;
@@ -540,6 +544,10 @@ section[id] {
         gap: 2rem;
         padding: 1rem 1rem 0;
         justify-content: center;
+
+        span {
+            white-space: nowrap;
+        }
     }
 }
 
